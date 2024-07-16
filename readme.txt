@@ -4,7 +4,7 @@ Tags: media, URL, remote, nginx
 Requires at least: 4.4
 Tested up to: 6.5.5
 Requires PHP: 7.0
-Stable tag: 1.1.3
+Stable tag: 1.1.4
 License: GPL-3.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-3.0.en.html
 
@@ -14,6 +14,12 @@ Modifies media URLs to load from a remote site.
 Remote Media URL Modifier is an essential plugin for developers working on local sites. This plugin replaces local media URLs with their corresponding live URLs, allowing you to work with the full media library without needing to download it. It's particularly useful if you're using nginx locally and cannot make URL modifications via .htaccess. With this plugin, you can streamline your development process and ensure your local environment mirrors your live site more accurately.
 
 == What's New ==
+= 1.1.4 =
+* Enhanced security by escaping output for HTML contexts.
+  * Replaced `__` with `esc_html_e` for displaying plugin activation message.
+  * Used `esc_attr` to escape URL input value.
+* Fixed potential security vulnerabilities by ensuring all output is properly escaped.
+
 = 1.1.3 =
 * Added functionality to modify media URLs to load from a remote site.
 * Included features to set live and local URLs, adjust attachment URLs, image attributes, and content URLs.
@@ -38,10 +44,19 @@ Remote Media URL Modifier is an essential plugin for developers working on local
 1. **Settings Page** - Screenshot of the plugin's settings page where you can add the Live URL.
 
 == Upgrade Notice ==
+= 1.1.4 =
+* Enhanced security by escaping output for HTML contexts. Fixed potential security vulnerabilities by ensuring all output is properly escaped.
+
 = 1.1.3 =
 * Added new functionality to modify media URLs for remote loading, updated settings management, and automatic deactivation on non-local sites.
 
 == Changelog ==
+= 1.1.4 =
+* Enhanced security by escaping output for HTML contexts.
+  * Replaced `__` with `esc_html_e` for displaying plugin activation message.
+  * Used `esc_attr` to escape URL input value.
+* Fixed potential security vulnerabilities by ensuring all output is properly escaped.
+
 = 1.1.3 =
 * Added functionality to modify media URLs to load from a remote site.
 * Included features to set live and local URLs, adjust attachment URLs, image attributes, and content URLs.

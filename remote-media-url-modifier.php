@@ -2,7 +2,7 @@
 /*
 Plugin Name: Remote Media URL Modifier
 Description: Modifies WordPress media URLs to load from a remote site.
-Version: 1.1.3
+Version: 1.1.4
 Author: Anthony Zarif
 License: GPL-3.0-or-later
 Text Domain: remote-media-url-modifier
@@ -117,7 +117,7 @@ class Remote_Media_URL_Modifier
         if (current_user_can('manage_options')) {
 ?>
             <div class="notice notice-warning is-dismissible">
-                <p><?php echo __('The Remote Media URL Modifier plugin is active on a non-local site. Please deactivate it.', 'remote-media-url-modifier'); ?></p>
+                <p><?php esc_html_e('The Remote Media URL Modifier plugin is active on a non-local site. Please deactivate it.', 'remote-media-url-modifier'); ?></p>
             </div>
         <?php
         }
@@ -146,7 +146,7 @@ class Remote_Media_URL_Modifier
     {
         ?>
         <div class="wrap">
-            <h1><?php echo __('Remote Media URL Modifier Settings', 'remote-media-url-modifier'); ?></h1>
+            <h1><?php esc_html_e('Remote Media URL Modifier Settings', 'remote-media-url-modifier'); ?></h1>
             <form method="post" action="options.php">
                 <?php
                 settings_fields('rmum_settings_group');
@@ -181,7 +181,7 @@ class Remote_Media_URL_Modifier
     public function live_url_callback()
     {
         $live_url = esc_url(get_option('rmum_live_url', ''));
-        echo '<input type="url" id="rmum_live_url" name="rmum_live_url" value="' . $live_url . '" size="50">';
+        echo '<input type="url" id="rmum_live_url" name="rmum_live_url" value="' . esc_attr($live_url) . '" size="50">';
     }
 }
 
